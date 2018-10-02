@@ -61,6 +61,57 @@ static NSString * const reuseIdentifier = @"PlanetCell";
 
     // for some reason setting the content mode in the storyboard didn't work
     [[cell imageView] setContentMode:UIViewContentModeScaleAspectFit];
+    
+    [[cell imageView] setTranslatesAutoresizingMaskIntoConstraints:false];
+    NSLayoutConstraint *imageWidth;
+    if ([indexPath item] == 0)
+    {
+        [[cell imageView] removeConstraints:[[cell imageView] constraints]];
+        imageWidth = [NSLayoutConstraint
+                      constraintWithItem:[cell imageView] attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:12.0];
+    } else if ([indexPath item] == 1)
+    {
+        [[cell imageView] removeConstraints:[[cell imageView] constraints]];
+        imageWidth = [NSLayoutConstraint
+                      constraintWithItem:[cell imageView] attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:30.0];
+    } else if ([indexPath item] == 2)
+    {
+        imageWidth = [NSLayoutConstraint
+                      constraintWithItem:[cell imageView] attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:31.0];
+    } else if ([indexPath item] == 3)
+    {
+        [[cell imageView] removeConstraints:[[cell imageView] constraints]];
+        imageWidth = [NSLayoutConstraint
+                      constraintWithItem:[cell imageView] attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:17.0];
+    } else if ([indexPath item] == 4)
+    {
+        [[cell imageView] removeConstraints:[[cell imageView] constraints]];
+        imageWidth = [NSLayoutConstraint
+                      constraintWithItem:[cell imageView] attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:345.0];
+    } else if ([indexPath item] == 5)
+    {
+        [[cell imageView] removeConstraints:[[cell imageView] constraints]];
+        imageWidth = [NSLayoutConstraint
+                      constraintWithItem:[cell imageView] attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:292.0];
+    } else if ([indexPath item] == 6)
+    {
+        [[cell imageView] removeConstraints:[[cell imageView] constraints]];
+        imageWidth = [NSLayoutConstraint
+                      constraintWithItem:[cell imageView] attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:124.0];
+    } else if ([indexPath item] == 7)
+    {
+        [[cell imageView] removeConstraints:[[cell imageView] constraints]];
+        imageWidth = [NSLayoutConstraint
+                      constraintWithItem:[cell imageView] attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:120.0];
+    } else
+    {
+        [[cell imageView] removeConstraints:[[cell imageView] constraints]];
+        imageWidth = [NSLayoutConstraint
+                      constraintWithItem:[cell imageView] attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:6.0];
+    }
+    [NSLayoutConstraint activateConstraints:[[NSArray alloc] initWithObjects:imageWidth, nil]];
+    
+    
     [[cell imageView] setImage:[[[self planets] objectAtIndex:[indexPath item]] planetImage]];
     [[cell nameLabel] setText:[[[self planets] objectAtIndex:[indexPath item]] name]];
     
