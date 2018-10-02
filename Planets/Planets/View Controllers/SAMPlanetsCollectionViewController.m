@@ -23,7 +23,6 @@ static NSString * const reuseIdentifier = @"PlanetCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.collectionView registerClass:[SAMPlanetCollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
     _defaultsHelper = [[SAMDefaultsHelper alloc] init];
     _planetController = [[SAMPlanetController alloc] init];
     _planets = [self returnPlanets];
