@@ -17,7 +17,6 @@
 		22EA05122162A44200A61412 /* SAMSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EA05112162A44200A61412 /* SAMSettingsViewController.m */; };
 		22EA05162162A86300A61412 /* SAMPlanet.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EA05152162A86300A61412 /* SAMPlanet.m */; };
 		22EA05192162A87100A61412 /* SAMPlanetController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EA05182162A87100A61412 /* SAMPlanetController.m */; };
-		22EA051D2162BB9300A61412 /* SAMDefaultsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EA051C2162BB9300A61412 /* SAMDefaultsHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,8 +38,6 @@
 		22EA05152162A86300A61412 /* SAMPlanet.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SAMPlanet.m; sourceTree = "<group>"; };
 		22EA05172162A87100A61412 /* SAMPlanetController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SAMPlanetController.h; sourceTree = "<group>"; };
 		22EA05182162A87100A61412 /* SAMPlanetController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SAMPlanetController.m; sourceTree = "<group>"; };
-		22EA051B2162BB9300A61412 /* SAMDefaultsHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SAMDefaultsHelper.h; sourceTree = "<group>"; };
-		22EA051C2162BB9300A61412 /* SAMDefaultsHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SAMDefaultsHelper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,7 +72,6 @@
 			children = (
 				22EA04F321629BD000A61412 /* AppDelegate.h */,
 				22EA04F421629BD000A61412 /* AppDelegate.m */,
-				22EA051A2162BB6800A61412 /* Defaults Helper */,
 				22EA05132162A84800A61412 /* Model and controller */,
 				22EA050921629FBD00A61412 /* View Controllers */,
 				22EA04F921629BD100A61412 /* Main.storyboard */,
@@ -109,15 +105,6 @@
 				22EA05182162A87100A61412 /* SAMPlanetController.m */,
 			);
 			path = "Model and controller";
-			sourceTree = "<group>";
-		};
-		22EA051A2162BB6800A61412 /* Defaults Helper */ = {
-			isa = PBXGroup;
-			children = (
-				22EA051B2162BB9300A61412 /* SAMDefaultsHelper.h */,
-				22EA051C2162BB9300A61412 /* SAMDefaultsHelper.m */,
-			);
-			path = "Defaults Helper";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,7 +185,6 @@
 				22EA050C21629FD500A61412 /* SAMPlanetsCollectionViewController.m in Sources */,
 				22EA050321629BE100A61412 /* main.m in Sources */,
 				22EA04F521629BD000A61412 /* AppDelegate.m in Sources */,
-				22EA051D2162BB9300A61412 /* SAMDefaultsHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -117,7 +117,7 @@
                                 <rect key="frame" x="318" y="20" width="37" height="30"/>
                                 <state key="normal" title="Done"/>
                                 <connections>
-                                    <action selector="dismiss:" destination="ltn-bI-49s" eventType="touchUpInside" id="cbA-VY-gYm"/>
+                                    <action selector="dismissVC:" destination="ltn-bI-49s" eventType="touchUpInside" id="6mY-Yu-F0o"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="t5P-BE-OJQ">
@@ -132,7 +132,7 @@
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="751" verticalHuggingPriority="750" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3m0-td-fHn">
                                         <rect key="frame" x="146" y="0.0" width="51" height="31"/>
                                         <connections>
-                                            <action selector="switchPlutoIsAPlanet:" destination="ltn-bI-49s" eventType="valueChanged" id="OqU-zB-hUz"/>
+                                            <action selector="toggleIncludePluto:" destination="ltn-bI-49s" eventType="valueChanged" id="zjn-7W-Qaa"/>
                                         </connections>
                                     </switch>
                                 </subviews>
@@ -148,6 +148,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="RaW-YZ-ODg"/>
                     </view>
+                    <connections>
+                        <outlet property="plutoSwitch" destination="3m0-td-fHn" id="U2q-Bv-eHu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wq2-zs-8jX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -12,6 +12,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SAMSettingsViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UISwitch *plutoSwitch;
+
+- (IBAction)dismissVC:(id)sender;
+- (IBAction)toggleIncludePluto:(id)sender;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -9,7 +9,6 @@
 #import "SAMPlanetsCollectionViewController.h"
 #import "SAMPlanetCollectionViewCell.h"
 #import "SAMPlanetController.h"
-#import "SAMDefaultsHelper.h"
 #import "SAMPlanet.h"
 
 @interface SAMPlanetsCollectionViewController ()
@@ -23,7 +22,11 @@ static NSString * const reuseIdentifier = @"PlanetCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _defaultsHelper = [[SAMDefaultsHelper alloc] init];
+    if (!([[[NSUserDefaults standardUserDefaults] objectForKey:@"PlutoPreference"] isEqualToString:(@"IncludingPluto")] || [[[NSUserDefaults standardUserDefaults] objectForKey:@"PlutoPreference"] isEqualToString:(@"ExcludingPluto")]))
+         {
+             [[NSUserDefaults standardUserDefaults] setObject:@"ExcludingPluto" forKey:@"PlutoPreference"];
+         }
+    
     _planetController = [[SAMPlanetController alloc] init];
     _planets = [self returnPlanets];
 }
@@ -31,15 +34,16 @@ static NSString * const reuseIdentifier = @"PlanetCell";
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    _planets = [self returnPlanets];
     [[self collectionView] reloadData];
 }
 
 - (NSArray *)returnPlanets {
-    if ([[[self defaultsHelper] plutoPreference]  isEqual: @"IncludingPluto"])
+    if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"PlutoPreference"]  isEqual: @"IncludingPluto"])
     {
         return [[self planetController] planetsWithPluto];
     }
-    if ([[[self defaultsHelper] plutoPreference]  isEqual: @"ExcludingPluto"])
+    if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"PlutoPreference"]  isEqual: @"ExcludingPluto"])
     {
         return [[self planetController] planetsWithoutPluto];
     }
@@ -55,6 +59,8 @@ static NSString * const reuseIdentifier = @"PlanetCell";
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     SAMPlanetCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
 
+    // for some reason setting the content mode in the storyboard didn't work
+    [[cell imageView] setContentMode:UIViewContentModeScaleAspectFit];
     [[cell imageView] setImage:[[[self planets] objectAtIndex:[indexPath item]] planetImage]];
     [[cell nameLabel] setText:[[[self planets] objectAtIndex:[indexPath item]] name]];
     

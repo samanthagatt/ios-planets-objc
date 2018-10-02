@@ -9,13 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @class SAMPlanetController;
-@class SAMDefaultsHelper;
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SAMPlanetsCollectionViewController : UICollectionViewController
 
-@property SAMDefaultsHelper *defaultsHelper;
 @property SAMPlanetController *planetController;
 @property NSArray *planets;
 
